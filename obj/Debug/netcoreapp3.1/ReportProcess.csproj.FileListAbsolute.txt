@@ -1,0 +1,15 @@
+C:\Users\mgaibor\source\repos\ReportProcess\ReportProcess\obj\Debug\netcoreapp3.1\ReportProcess.csproj.AssemblyReference.cache
+C:\Users\mgaibor\source\repos\ReportProcess\ReportProcess\obj\Debug\netcoreapp3.1\ReportProcess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mgaibor\source\repos\ReportProcess\ReportProcess\obj\Debug\netcoreapp3.1\ReportProcess.AssemblyInfoInputs.cache
+C:\Users\mgaibor\source\repos\ReportProcess\ReportProcess\obj\Debug\netcoreapp3.1\ReportProcess.AssemblyInfo.cs
+C:\Users\mgaibor\source\repos\ReportProcess\ReportProcess\obj\Debug\netcoreapp3.1\ReportProcess.csproj.CoreCompileInputs.cache
+C:\Users\mgaibor\source\repos\ReportProcess\ReportProcess\bin\Debug\netcoreapp3.1\ReportProcess.exe
+C:\Users\mgaibor\source\repos\ReportProcess\ReportProcess\bin\Debug\netcoreapp3.1\Properties\Config.properties
+C:\Users\mgaibor\source\repos\ReportProcess\ReportProcess\bin\Debug\netcoreapp3.1\ReportProcess.deps.json
+C:\Users\mgaibor\source\repos\ReportProcess\ReportProcess\bin\Debug\netcoreapp3.1\ReportProcess.runtimeconfig.json
+C:\Users\mgaibor\source\repos\ReportProcess\ReportProcess\bin\Debug\netcoreapp3.1\ReportProcess.runtimeconfig.dev.json
+C:\Users\mgaibor\source\repos\ReportProcess\ReportProcess\bin\Debug\netcoreapp3.1\ReportProcess.dll
+C:\Users\mgaibor\source\repos\ReportProcess\ReportProcess\bin\Debug\netcoreapp3.1\ReportProcess.pdb
+C:\Users\mgaibor\source\repos\ReportProcess\ReportProcess\obj\Debug\netcoreapp3.1\ReportProcess.dll
+C:\Users\mgaibor\source\repos\ReportProcess\ReportProcess\obj\Debug\netcoreapp3.1\ReportProcess.pdb
+C:\Users\mgaibor\source\repos\ReportProcess\ReportProcess\obj\Debug\netcoreapp3.1\ReportProcess.genruntimeconfig.cache
