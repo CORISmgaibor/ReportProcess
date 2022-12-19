@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mgaibor\\source\\repos\\ReportProcess\\ReportProcess\\ReportProcess.csproj": {}
+    "C:\\Users\\mgaibor\\source\\repos\\ReportProcess\\ReportProcess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mgaibor\\source\\repos\\ReportProcess\\ReportProcess\\ReportProcess.csproj": {
+    "C:\\Users\\mgaibor\\source\\repos\\ReportProcess\\ReportProcess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mgaibor\\source\\repos\\ReportProcess\\ReportProcess\\ReportProcess.csproj",
+        "projectUniqueName": "C:\\Users\\mgaibor\\source\\repos\\ReportProcess\\ReportProcess.csproj",
         "projectName": "ReportProcess",
-        "projectPath": "C:\\Users\\mgaibor\\source\\repos\\ReportProcess\\ReportProcess\\ReportProcess.csproj",
+        "projectPath": "C:\\Users\\mgaibor\\source\\repos\\ReportProcess\\ReportProcess.csproj",
         "packagesPath": "C:\\Users\\mgaibor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mgaibor\\source\\repos\\ReportProcess\\ReportProcess\\obj\\",
+        "outputPath": "C:\\Users\\mgaibor\\source\\repos\\ReportProcess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mgaibor\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.97.0, )"
+            },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[5.0.1, )"
