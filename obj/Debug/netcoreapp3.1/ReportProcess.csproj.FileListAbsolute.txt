@@ -86,3 +86,4 @@ C:\Users\mgaibor\source\repos\ReportProcess\bin\Debug\netcoreapp3.1\runtimes\win
 C:\Users\mgaibor\source\repos\ReportProcess\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\mgaibor\source\repos\ReportProcess\obj\Debug\netcoreapp3.1\ReportProcess.csproj.CopyComplete
 C:\Users\mgaibor\source\repos\ReportProcess\obj\Debug\netcoreapp3.1\ReportProcess.genruntimeconfig.cache
+C:\Users\mgaibor\source\repos\ReportProcess\bin\Debug\netcoreapp3.1\Properties\coris.png

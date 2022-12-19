@@ -53,11 +53,22 @@ namespace ReportProcess
         public static void ToExcel(this System.Data.DataTable dtDataTable, string strFilePath)
         {
             XLWorkbook wb = new XLWorkbook();
-            //var imagePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Resources\coris.png");
+            string imagePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Properties\coris.png");
             var pagina = wb.Worksheets.Add(dtDataTable, "WorksheetName");
             pagina.Row(1).InsertRowsAbove(5);
-            pagina.Range("A1:C3");
-            //pagina.AddPicture(imagePath).MoveTo(pagina.Cell("A1")).Scale(1.5);
+            pagina.Range("A1:C4").Merge();
+            pagina.Range("F1:K2").Merge();
+            pagina.Range("A1:M5").Style.Fill.BackgroundColor = XLColor.White;
+            pagina.Range("F1:K2").Style.Font.FontSize = 18;
+            pagina.Range("F1:K2").Style.Font.Bold = true;
+            pagina.Range("F1:K2").Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Left);
+            pagina.Range("F1:K2").Style.Alignment.SetVertical(XLAlignmentVerticalValues.Center);
+            for (int i = 1; i < 50; i++)
+            {
+                pagina.Column(i).AdjustToContents();
+            }
+            pagina.AddPicture(imagePath).MoveTo(pagina.Cell("B2")).Scale(0.8);
+            pagina.Cell("F1").Value = "NOMBRE DE LA CAMPAÑA";
             wb.SaveAs(strFilePath);
 
         }

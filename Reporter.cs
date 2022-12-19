@@ -22,14 +22,14 @@ namespace ReportProcess
         {
             int valorTiempo = Int16.Parse(properties.get("Process.Pause.Minutes", "1"));
             int tiempoPausa = 1000 * 60 * valorTiempo; // de minutos a milisegundos
-            logger.LogWrite("PausoProceso " + tiempoPausa + " minutos...");
+            logger.LogWrite("PausoProceso " + valorTiempo + " minutos...");
             System.Threading.Thread.Sleep(tiempoPausa);
         }
 
         private static void run()
         {
             string strConn = properties.get("Process.Connection", "");
-            string descripcion = "", nombreQuery = "", cadena = "", extension = "", repoSalida = "";
+            string nombreCampana = "", nombreQuery = "", stringConeccion = "", extension = "", repoSalida = "";
             SqlConnection conn = new SqlConnection(strConn);
             //SqlCommand cmd = new SqlCommand(@"SELECT A.DESCRIPCION , B.NOMBRE , D.CADENA , F.EXTENSION 
             //                                  FROM CAMPANA A JOIN QUERY B ON A.IDCAMPANA = B.IDCAMPANA
@@ -46,13 +46,13 @@ namespace ReportProcess
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    descripcion = (string)reader["DESCRIPCION"];
+                    nombreCampana = (string)reader["DESCRIPCION"];
                     nombreQuery = (string)reader["NOMBRE"];
-                    cadena = (string)reader["CADENA"];
+                    stringConeccion = (string)reader["CADENA"];
                     extension = (string)reader["EXTENSION"];
                     repoSalida = (string)reader["URLSALIDA"];
 
-                    SqlConnection tempConn = new SqlConnection(cadena);
+                    SqlConnection tempConn = new SqlConnection(stringConeccion);
                     SqlCommand tempCmd = new SqlCommand(nombreQuery, tempConn);
                     tempConn.Open();
                     try
@@ -61,8 +61,14 @@ namespace ReportProcess
                         SqlDataAdapter da = new SqlDataAdapter(tempCmd);
                         DataTable table = new DataTable();
                         da.Fill(table);
-                        //table.ToCSV(repoSalida + descripcion + ".csv"  );
-                        table.ToExcel(repoSalida + descripcion + "." + extension);
+                        if (extension.Equals("csv"))
+                        {
+                            table.ToCSV(repoSalida + nombreCampana + ".csv");
+                        }
+                        else if (extension.Equals("xlsx") || extension.Equals("xlsm") || extension.Equals("xls"))
+                        {
+                            table.ToExcel(repoSalida + nombreCampana + "." + extension.ToLower());
+                        }
 
                     }
                     catch (Exception e)
