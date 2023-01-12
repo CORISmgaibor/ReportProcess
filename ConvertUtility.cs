@@ -50,11 +50,11 @@ namespace ReportProcess
         }
 
 
-        public static void ToExcel(this System.Data.DataTable dtDataTable, string strFilePath)
+        public static void ToExcel(this System.Data.DataTable dtDataTable, string strFilePath, string nombreCampana)
         {
             XLWorkbook wb = new XLWorkbook();
             string imagePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Properties\coris.png");
-            var pagina = wb.Worksheets.Add(dtDataTable, "WorksheetName");
+            var pagina = wb.Worksheets.Add(dtDataTable, "ReportCoris");
             pagina.Row(1).InsertRowsAbove(5);
             pagina.Range("A1:C4").Merge();
             pagina.Range("F1:K2").Merge();
@@ -68,10 +68,10 @@ namespace ReportProcess
                 pagina.Column(i).AdjustToContents();
             }
             pagina.AddPicture(imagePath).MoveTo(pagina.Cell("B2")).Scale(0.8);
-            pagina.Cell("F1").Value = "NOMBRE DE LA CAMPAÑA";
+            pagina.Cell("F1").Value = nombreCampana;
             wb.SaveAs(strFilePath);
 
-        }
 
+        }
     }
 }

@@ -18,6 +18,12 @@ namespace ReportProcess
             }
         }
 
+
+
+
+
+
+
         private static void pause()
         {
             int valorTiempo = Int16.Parse(properties.get("Process.Pause.Minutes", "1"));
@@ -38,7 +44,7 @@ namespace ReportProcess
             //                                  JOIN FORMATO_QUERY E ON E.IDQUERY = B.IDQUERY
             //                                  JOIN FORMATOS F ON E.IDFORMATO = F.IDFORMATO
             //                                  WHERE A.ESTADO = 1 AND B.ESTADO = 1", conn);
-            SqlCommand cmd = new SqlCommand(@"SELECT 'CAMPAÑA DE PRUEBA' AS DESCRIPCION , 'SP_TEST' AS NOMBRE , 'Data Source=192.168.0.185;Initial Catalog=Reportiador;Persist Security Info=True;User ID=sa;Password=Administrator1;TrustServerCertificate=True' AS CADENA, 'XLSX' AS EXTENSION, '' AS PARAMETROS , '\\192.168.10.4\Compartida temp\Reporteador\' as URLSALIDA", conn);
+            SqlCommand cmd = new SqlCommand(@"SELECT 'CAMPAÑA DE PRUEBA' AS DESCRIPCION , 'SP_TEST' AS NOMBRE , 'Data Source=192.168.0.185;Initial Catalog=Reportiador;Persist Security Info=True;User ID=sa;Password=Administrator1;TrustServerCertificate=True' AS CADENA, 'xlsx' AS EXTENSION, '' AS PARAMETROS , '\\192.168.10.4\Compartida temp\Reporteador\' as URLSALIDA", conn);
 
             try
             {
@@ -65,11 +71,10 @@ namespace ReportProcess
                         {
                             table.ToCSV(repoSalida + nombreCampana + ".csv");
                         }
-                        else if (extension.Equals("xlsx") || extension.Equals("xlsm") || extension.Equals("xls"))
+                        else if (extension.Equals("xlsx") || extension.Equals("xlsm") || extension.Equals("xltx") || extension.Equals("xltm")  )  
                         {
-                            table.ToExcel(repoSalida + nombreCampana + "." + extension.ToLower());
+                            table.ToExcel(repoSalida + nombreCampana + "." + extension.ToLower() , nombreCampana);
                         }
-
                     }
                     catch (Exception e)
                     {
@@ -79,7 +84,6 @@ namespace ReportProcess
                         tempConn.Close();
                     }
                 }
-
             }
             catch (Exception e)
             {
